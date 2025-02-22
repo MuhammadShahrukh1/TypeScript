@@ -337,3 +337,59 @@ console.log(cat.makeSound());
 console.log(cat.getSpecies());
 
 //Question No 10 End
+
+//Quesrtion No 12 Start
+
+interface car  {
+    drive() : string
+}
+interface Bike {
+    ride() : string
+}
+
+let car1 : car = {
+    drive(){
+        return `Drive A Car`
+    }
+}
+
+let bike : Bike = {
+    ride(){
+        return `Riding a Bicycle`
+    }
+}
+function useVehicle(vehicle : car | Bike) : void{
+    if('drive()' in vehicle){
+        console.log(vehicle.drive())
+    }
+}
+
+useVehicle(car1)
+//Question No 12 End
+
+//Question no 13 Start
+
+interface Person {
+    name: string;
+    age: number;
+  }
+
+  interface Employee {
+    jobTitle: string;
+  }
+
+  type FullTimeEmployee = Person & Employee;
+
+  function describeEmployee(emp: FullTimeEmployee){
+    console.log(`Name ${emp.name}`);
+    console.log(`Age ${emp.age}`);
+    console.log(`Job Title ${emp.jobTitle}`)
+  }
+
+  let companyEmployee : FullTimeEmployee ={
+    name : 'John Doe',
+    age : 25,
+    jobTitle : 'Engineer'
+  }
+describeEmployee(companyEmployee);
+//Question no 13 End

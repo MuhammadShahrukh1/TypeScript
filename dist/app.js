@@ -224,5 +224,32 @@ console.log(dog.makeSound());
 console.log(dog.getSpecies());
 console.log(cat.makeSound());
 console.log(cat.getSpecies());
-//Question No 10 End
+let car1 = {
+    drive() {
+        return `Drive A Car`;
+    }
+};
+let bike = {
+    ride() {
+        return `Riding a Bicycle`;
+    }
+};
+function useVehicle(vehicle) {
+    if ('drive()' in vehicle) {
+        console.log(vehicle.drive());
+    }
+}
+useVehicle(car1);
+function describeEmployee(emp) {
+    console.log(`Name ${emp.name}`);
+    console.log(`Age ${emp.age}`);
+    console.log(`Job Title ${emp.jobTitle}`);
+}
+let companyEmployee = {
+    name: 'John Doe',
+    age: 25,
+    jobTitle: 'Engineer'
+};
+describeEmployee(companyEmployee);
+//Question no 13 End
 //# sourceMappingURL=app.js.map
